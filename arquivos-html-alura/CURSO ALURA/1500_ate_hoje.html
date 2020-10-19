@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<script>
+
+var descobrimentoBrasil = 1500
+var anoAtual = 2020
+var idadeBrasil = anoAtual - descobrimentoBrasil
+var idadeFilhos = 28
+
+function pulaLinha() {
+
+	document.write("<br><br>");
+
+}
+
+function mostra(texto) {
+
+	document.write(texto);
+
+	pulaLinha();
+
+}
+
+function mostra(titulo) {
+
+	document.write(titulo);
+
+	pulaLinha();
+
+}
+
+mostra("<h1>Atividade 13 – Aula 4 – O Problema Das Gerações</h1>");
+mostra("Desde 1500 até hoje se passaram " + (Math.round(idadeBrasil/idadeFilhos)) + " gerações");
+document.write("FIM");
+
+</script>

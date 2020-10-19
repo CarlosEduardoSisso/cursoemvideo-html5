@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Entre com o seu número aqui</button>
+
+<script>
+    var numeroCorreto = Math.round(Math.random() * 10);
+
+    var entrada = document.querySelector ("input");
+    entrada.focus();
+
+    function verifica () {
+
+        if (entrada.value == numeroCorreto) {
+
+            alert("Você ACERTOU!!!!");
+
+         } else {
+
+            alert("Você ERROU!");
+            entrada.focus();
+
+        }
+        
+        entrada.value = "";
+
+
+    }
+
+    var botao = document.querySelector ("button");
+    botao.onclick = verifica;
+
+        
+</script>

@@ -1,0 +1,26 @@
+<input/>
+<button>Descubra meu segredo</button>
+<script>
+
+    var meuSegredo = Math.round(Math.random()*10);
+    //Apenas para fins didáticos
+    console.log(meuSegredo);
+
+    var input = document.querySelector("input");
+    input.focus();
+    function verifica(){
+        if(input.value == meuSegredo){
+            alert("Você acertou!");
+            //recarregar página
+            window.location.reload();
+        } else {
+            alert("Você errou!");
+        }
+        input.value = null;
+        input.focus();
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = verifica;
+
+</script>

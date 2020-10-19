@@ -1,0 +1,45 @@
+<meta charset="UTF-8"> 
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas'); // Chamando o Canvas do mundo HTML para o mundo Java Script, e atribuindo ele à tela do computador.
+    var pincel = tela.getContext('2d'); // Definindo que pincel será o conteúdo obtido da tela em 2D.
+
+    pincel.fillStyle = 'lightgray'; // Define cor do Canvas, cujas definições de tamanho estão no cabeçalho deste código.
+    pincel.fillRect(0, 0, 600, 400); // Define tamanho do Canvas (coordenada 'x' inicial, coordenada 'y' inicial, comprimento e altura)
+
+    function desenhaCirculo(x, y, raio) { // Quando a função for chamada, ela executa: cor do pincel, inicia um caminho, define parâmetros do arco e preenche o círculo.
+
+        pincel.fillStyle = 'blue'; // cor do pincel que vai desenhar o círculo;
+        pincel.beginPath(); // comando que indica que vamos iniciar um caminho;
+        pincel.arc(x, y, raio, 0, 2 * Math.PI) // parâmetros do arco que eu vou desenhar (coordenada 'x', coordenada 'y', raio, ângulo inicial e ângulo final)
+        pincel.fill(); // comando que estabelece que o arco seja preenchido ao final para que ele tenha a cor determinada anteriormente.
+
+    }
+
+    function limpaTela() { // função criada para facilitar a leitura sobre o comando que limpa a tela para que a animação da bolinha aconteça.
+
+        pincel.clearRect(0, 0, 600, 400); // comando que limpa a tela na medida descrita (no caso aqui, mesma medida do canvas, o que limpará a tela toda).
+
+    }
+        /*
+        limpaTela(); // chama a funçao 'limpaTela' criada acima.
+        desenhaCirculo(x, 20, 10); // Quando isso aqui executar, ele vai chamar todo o bloco da função acima (que estava 'guardada' até então)
+        (Esses comandos foram omitidos porque não serão necessários)
+        */
+
+    var x = 20; // variável 'x' estabelecida para situar a coordenada do ponto central onde a bolinha será desenhada.
+
+    function atualizaTela () { // função criada para criar os parâmetros que serão chamados pelo comando "setInterval" abaixo.
+
+        limpaTela(); // chama a função 'limpaTela' criada acima, que limpará o desenho anterior da bolinha, a fim de dar a noção de movimento.
+        desenhaCirculo(x, 20, 10); // desenha a bolinha, com os parâmetros apresentados aqui e na função criada no início.
+        x++; //incremento da coordenada 'x', o que, aliado à função 'limpaTela' e 'desenhaCirculo', dará a noção de movimento.
+
+    }
+
+    setInterval(atualizaTela, 10); // comando que ajusta intervalos, a partir de 2 parâmetros (aceita uma função), o último, o tempo em milisegundos em que ele ocorrerá.
+
+</script>
